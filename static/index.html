@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="application">
+  <head>
+    <title ng-bind="pageTitle"></title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <base href="/" />
+    <meta charset="utf-8">
+    <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="static/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-translate/angular-translate.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/screenfull/dist/screenfull.js"></script>
+    <script type="text/javascript" src="/static/bower_components/angular-screenfull/dist/angular-screenfull.min.js"></script>
+    <script type="text/javascript" src="/static/javascripts/app.js"></script>
+    <script type="text/javascript" src="/static/javascripts/app.config.js"></script>
+    <script type="text/javascript" src="/static/javascripts/app.routes.js"></script>
+
+    <script type="text/javascript" src="/static/javascripts/translate/translate.module.js"></script>
+    <script type="text/javascript" src="/static/javascripts/translate/controllers/translate.controller.js"></script>
+
+
+    <script type="text/javascript" src="/static/javascripts/toast/toast.module.js"></script>
+    <script type="text/javascript" src="/static/javascripts/toast/services/toast.service.js"></script>
+
+    <script type="text/javascript" src="/static/javascripts/authentication/auth.module.js"></script>
+    <script type="text/javascript" src="/static/javascripts/authentication/services/auth.service.js"></script>
+    <script type="text/javascript" src="/static/javascripts/authentication/services/users.service.js"></script>
+    <script type="text/javascript" src="/static/javascripts/authentication/controllers/login.controller.js"></script>
+    <script type="text/javascript" src="/static/javascripts/authentication/interceptors/auth.interceptor.js"></script>
+    <script type="text/javascript" src="/static/javascripts/profiles/profiles.module.js"></script>
+    <script type="text/javascript" src="/static/javascripts/profiles/services/profile.service.js"></script>
+    <script type="text/javascript" src="/static/javascripts/profiles/controllers/profile.controller.js"></script>
+    <script type="text/javascript" src="/static/javascripts/profiles/controllers/me.controller.js"></script>
+
+    <script type="text/javascript" src="/static/javascripts/profiles/controllers/profile-settings.controller.js"></script>
+
+    <script type="text/javascript" src="/static/javascripts/static/static.module.js"></script>
+    <script type="text/javascript" src="/static/javascripts/static/controllers/index.controller.js"></script>
+    <script type="text/javascript" src="/static/javascripts/static/controllers/navbar.controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
+  <body ng-controller="AppCtrl" ngsf-fullscreen>
+  <div ng-include="'/static/templates/static/side-nav.html'" ng-controller="LeftCtrl as vm" ></div>  
+  <div layout="column" class="relative" layout-fill role="main">
+      <div ng-include="'/static/templates/static/tool-bar.html'" ng-controller="NavbarController as vm" ng-show="vm.isLoggedIn" ></div>
+    <md-content flex md-scroll-y>
+      <ui-view layout="column" layout-fill layout-padding ng-view class="fade">
+      </ui-view>
+    </md-content>
+  </div>
+  </body>
+</html>

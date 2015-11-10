@@ -1,0 +1,39 @@
+      <md-toolbar class="custom-md-toolbar md-whiteframe-z0" style="background-color: {{profile.color}}">
+        <div class="md-toolbar-tools custom-md-toolbar-tools" style="background-color: {{profile.color}}">
+          <md-button ng-click="toggleLeft()" aria-label="Menu" class="md-icon-button md-button">
+           <md-tooltip md-direction="bottom">
+          {{ 'MENU' | translate}}
+          </md-tooltip>
+            <md-icon md-svg-icon="/static/img/icons/ic_menu_48px.svg" class="ng-scope ng-isolate-scope"></md-icon>
+          </md-button>
+
+          <h5>
+            <a class="toolbar-text" href="/">OCTOPUS</a>
+          </h5>
+          <span flex></span>
+          <h5>{{ profile.username }}&nbsp;&nbsp;</h5>
+          <md-button ngsf-toggle-fullscreen aria-label="Toggle Full Screen" class="custom-md-button md-icon-button" >
+          <md-tooltip md-direction="bottom">
+          {{ 'FULLSCREEN' | translate}}
+          </md-tooltip>
+              <md-icon md-svg-icon="/static/img/icons/ic_aspect_ratio_24px.svg"></md-icon>
+            </md-button>
+          <span class="dropdown dropdown-append-to-body" uib-dropdown >
+          <md-button class="custom-md-button md-icon-button dropdown-toggle" aria-label="More" uib-dropdown-toggle >
+            <md-icon md-svg-icon="/static/img/icons/ic_more_vert_48px.svg"></md-icon>
+          </md-button>
+        <ul class="dropdown-menu custom-dropdown-menu " uib-dropdown-menu>
+          <li>
+            <a href="/me/">{{ 'PROFILE' | translate}}</a>
+          </li>
+          <li>
+            <a href="/settings">{{ 'SETTINGS' | translate}}</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="javascript:void(0)" ng-click="vm.logout()">{{ 'LOGOUT' | translate}}</a>
+          </li>
+        </ul>
+      </span>
+        </div>
+      </md-toolbar>

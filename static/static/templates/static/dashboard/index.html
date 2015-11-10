@@ -1,0 +1,134 @@
+<div class="row">
+          <!-- BEGIN USER PROFILE -->
+          <div class="col-md-12">
+            <div class="grid profile">
+              <div class="grid-header">
+                <div class="col-xs-2">
+                  <img src="/static/img/profiles/photo.jpg" class="img-circle" alt="">
+                </div>
+                <div class="col-xs-7">
+                  <h3>Jeffrey Williams</h3>
+                  <p>@jwilliams</p>
+                  <p>Website Developer, Programmer</p>
+                  <p>New York City, NY, USA</p>
+                </div>
+                <div class="col-xs-3 text-right">
+                  <p><a href="" title="Everyone can see your profile"><i class="fa fa-globe"></i> Everyone</a></p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- END USER PROFILE -->
+</div>
+
+
+
+<div flex ng-cloak>
+  <md-grid-list
+        md-cols-sm="1" md-cols-md="4" md-cols-gt-md="8"
+        md-row-height-gt-md="1:1" md-row-height="1:1"
+        md-gutter="8px" md-gutter-gt-sm="4px" >
+    <md-grid-tile
+                  md-rowspan="1"
+                  md-colspan="1"
+                  md-colspan-sm="1"
+                  class="red" >
+      <div class="pull-center" >
+                
+                <img aling="middle" class="media-object dp img-circle" ng-src="/static/img/profiles/photo.jpg" style="max-width: 100px;max-height:100px;">
+            
+            </div>
+    </md-grid-tile>
+    <md-grid-tile
+                  md-rowspan="1"
+                  md-colspan="2"
+                  md-colspan-sm="1"
+                  class="red" >
+      <p class="left">{{vm.profile.FirstName}} {{vm.profile.MidName}} {{vm.profile.LastName}}<br />
+        {{vm.profile.Pos[PositionName]}}
+      Joined: {{vm.profile.Created_at | date:'yyyy-MM-dd'}}<br />
+      Last Modifed: {{vm.profile.Updated_at | date:'yyyy-MM-dd HH:mm:ss'}}<br />
+      Contact: <br /><span ng-repeat="item in vm.profile.Phone">
+      {{item.Name}}: {{item.Phone}}<br />
+    </span>
+                  </p>
+    </md-grid-tile>
+
+    <md-grid-tile
+                  md-rowspan="1"
+                  md-colspan="1"
+                  md-colspan-sm="1"
+                  class="red" >
+      
+      <md-grid-tile-footer><h3>joooo</h3></md-grid-tile-footer>
+    </md-grid-tile>
+
+  </md-grid-list>
+</div>
+
+
+
+
+ <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="media">
+            <div class="pull-center" >
+                
+                <img aling="middle" class="media-object dp img-circle" ng-src="/static/img/profiles/photo.jpg" style="width: 100px;height:100px;">
+            <br /><br />
+
+            </div>
+         </div>
+    </div>
+    <form role="form" class="settings" ng-submit="vm.updateme()" enctype="multipart/form-data">
+            
+    <div class="col-xs-12 col-sm-6 col-md-2">
+            <div class="media-body">
+                  
+                    <md-input-container> 
+                      <input class="profile-edit" aria-label="first_name" ng-model="vm.profile.FirstName" ng-disabled="button" ng-init="button=true">
+                    </md-input-container>
+                    <md-input-container> 
+                      <input class="profile-edit" aria-label="last_name" ng-model="vm.profile.LastName" ng-disabled="button" ng-init="button=true">                 
+                    </md-input-container>
+                 
+                    <md-input-container> 
+                      <input class="profile-edit" aria-label="position" ng-model="vm.profile.position.position" ng-disabled="button" ng-init="button=true">                 
+                    </md-input-container>
+                </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-2">
+            <div class="media-body">
+                    <md-input-container> 
+                      <md-icon  md-svg-src="/static/img/icons/ic_email_24px.svg" class="email custom-md-icon"></md-icon>
+                      <input class="profile-edit" aria-label="first_email" ng-model="vm.profile.email" ng-disabled="button" ng-init="button=true" type="email" >           
+                    </md-input-container>
+                    <md-input-container> 
+                      <md-icon md-svg-src="/static/img/icons/ic_phone_24px.svg" class="phone custom-md-icon"></md-icon>
+                      <input class="profile-edit" aria-label="first_phone" ng-model="vm.profile.phone" ng-disabled="button" ng-init="button=true">                 
+                    </md-input-container>               
+
+                    
+                    <md-button class="custom-md-button md-raised" ng-click="button=false">Edit profile</md-button>
+                    <md-button class="custom-md-button md-raised" ng-show="button == false" ng-click="button=true">Cancel</md-button>
+                    
+    				
+               
+            </div>
+            </div>
+
+     </form>
+     </div>
+<hr>
+
+
+</div>
+
+
+
+
+
+
+
+

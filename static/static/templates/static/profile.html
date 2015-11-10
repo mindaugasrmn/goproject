@@ -1,0 +1,24 @@
+
+ <div class="row" ng-repeat="item in vm.profile">
+    <div class="col-lg-4">
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object dp img-circle" ng-src="{{item.avatar}}" style="width: 100px;height:100px;">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{item.first_name}} {{item.last_name}}</h4>
+                <p><b>{{item.position}}</b> <br />email:<a href="emailto('item.email')">{{item.email}}</a><br />
+                phone: {{item.phone}}</p>
+                <md-button class="custom-md-button md-raised">Edit profile</md-button>
+                <hr>
+				<p>
+                Joined: {{item.created_at | date:'yyyy-MM-dd'}}<br />
+                Last Modifed: {{item.updated_at| date:'yyyy-MM-dd HH:mm:ss'}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

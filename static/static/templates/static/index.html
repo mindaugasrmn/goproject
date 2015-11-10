@@ -1,0 +1,36 @@
+<div>
+  <md-button ng-click="dynamicTheme = 'default'">Default</md-button>
+  <md-button ng-click="dynamicTheme = 'altTheme'">altTheme</md-button>
+  <div md-theme="{{ dynamicTheme }}" md-theme-watch>
+    <md-button class="md-primary">{{ 'HEADLINE' | translate }}</md-button>
+  </div>
+</div>
+<div ng-controller="TranslateController">
+  <button ng-click="changeLanguage('lt')" translate="BUTTON_TEXT_LT"></button>
+  <button ng-click="changeLanguage('en')" translate="BUTTON_TEXT_EN"></button>
+</div>
+<section ng-repeat="item in vm.users">
+<div class="row user-list-row">
+  {{item.position}}
+</div>
+
+<div class="row user-list-row">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 user-list-col" ng-repeat="user in item.users" >
+        <md-list-item class="user-list" style="border-left: 4px solid {{user.position.color}}">
+        <img ng-src="{{user.avatar}}" class="md-avatar">
+        <div class="md-list-item-text compact">
+	      <p><b>{{user.first_name}} {{user.last_name}}</b><br />
+	      <b>{{user.position.position}}</b><br />email: {{user.email}},<br />phone: {{user.phone}}</p>
+	    </div>
+	    </md-list-item>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+

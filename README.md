@@ -37,7 +37,16 @@ func main() {
 
 </pre>
 
-then move from github.com/mindaugasrmn/static to GOLANG/static,
-then start mongo and redis and simply run go get and go run server.go
+then:
+<pre>
+$ cd $GOPATH
+$ mv src/github.com/mindaugasrmn/goproject/static .
+</pre>
+
+then start mongo and redis, and then run application:
+<pre>
+$ go get
+$ go run server.go
+</pre>
 
 

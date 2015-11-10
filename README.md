@@ -16,11 +16,11 @@ create file in GOPATH path, lets say server.go with content:
 package main
 
 import (
-  "github.com/gorilla/context"
-	"github.com/mindaugasrmn/routers"
-	"github.com/mindaugasrmn/settings"
+    "github.com/gorilla/context"
+	"github.com/mindaugasrmn/goproject/routers"
+	"github.com/mindaugasrmn/goproject/settings"
 	"github.com/codegangsta/negroni"
-	"github.com/mindaugasrmn/core/mongo"
+	"github.com/mindaugasrmn/goproject/core/mongo"
 	"net/http"
 	"log"
 )
@@ -34,6 +34,7 @@ func main() {
 	n.UseHandler(context.ClearHandler(router))
 	http.ListenAndServe(":5000", n)
 }
+
 </pre>
 
 then move from github.com/mindaugasrmn/static to GOLANG/static,

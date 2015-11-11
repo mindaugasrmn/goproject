@@ -40,12 +40,12 @@ func main() {
 then:
 <pre>
 $ cd $GOPATH
+$ go get
 $ mv src/github.com/mindaugasrmn/goproject/static .
 </pre>
 
 then start mongo and redis, and then run application:
 <pre>
-$ go get
 $ go run server.go
 </pre>
 

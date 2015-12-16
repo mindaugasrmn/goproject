@@ -1,0 +1,5 @@
+{
+  "PrivateKeyPath": "/Volumes/mac_data/Users/mr/go/src/github.com/mindaugasrmn/goproject/apicore/settings/keys/private_key",
+  "PublicKeyPath": "/Volumes/mac_data/Users/mr/go/src/github.com/mindaugasrmn/goproject/apicore/settings/keys/public_key.pub",
+  "JWTExpirationDelta": 72
+}

@@ -17,23 +17,24 @@ package main
 
 import (
     "github.com/gorilla/context"
-	"github.com/mindaugasrmn/goproject/routers"
-	"github.com/mindaugasrmn/goproject/settings"
-	"github.com/codegangsta/negroni"
-	"github.com/mindaugasrmn/goproject/core/mongo"
-	"net/http"
-	"log"
+    "github.com/mindaugasrmn/goproject/routers"
+    "github.com/mindaugasrmn/goproject/apicore/settings"
+    "github.com/codegangsta/negroni"
+    "github.com/mindaugasrmn/goproject/apicore/db/mongo"
+    "net/http"
+    "log"
 )
 
 func main() {
-	log.Print("Server started and listening on port 5000")
-	settings.Init()
-	router := routers.InitRoutes()
-	n := negroni.Classic()
-	n.Use(mongo.MongoMiddleware())
-	n.UseHandler(context.ClearHandler(router))
-	http.ListenAndServe(":5000", n)
+    log.Print("Server started and listening on port 5000")
+    settings.Init()
+    router := routers.InitRoutes()
+    n := negroni.Classic()
+    n.Use(mongo.MongoMiddleware())
+    n.UseHandler(context.ClearHandler(router))
+    http.ListenAndServe(":5000", n)
 }
+
 
 </pre>
 

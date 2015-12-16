@@ -1,7 +1,0 @@
-{
- "Mongo_svr": "127.0.0.1:27017",
- "Mongo_db": "octopus",
- "Redis_srv": "127.0.0.1:6379",
- "Redis_pwd": "redispwd",
- "Env": "preproduction"
-}

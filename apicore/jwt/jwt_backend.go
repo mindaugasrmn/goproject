@@ -43,12 +43,7 @@ func (backend *JWTAuthenticationBackend) GenerateToken(user *models.User) (strin
 	token.Claims["iat"] = time.Now().Unix()
 	token.Claims["sub"] = user.Id.Hex()
 	token.Claims["username"] = user.Username
-	token.Claims["first_name"] = user.FirstName
-	token.Claims["mid_name"] = user.MidName
-	token.Claims["last_name"] = user.LastName
-	token.Claims["gender"] = user.Gender
 	token.Claims["color"] = user.Pos.Color
-	token.Claims["positionname"] = user.Pos.PositionName
 	tokenString, err := token.SignedString(backend.privateKey)
 	if err != nil {
 		panic(err)
@@ -58,7 +53,6 @@ func (backend *JWTAuthenticationBackend) GenerateToken(user *models.User) (strin
 }
 
 func (backend *JWTAuthenticationBackend) Authenticate(requestUser *models.User,user *models.User) bool {
-	//hashedPassword, _ := bcrypt.GenerateFromPassword([]byte("testing"), 10)
 	return user.Username == requestUser.Username && bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(requestUser.Password)) == nil
 }
 

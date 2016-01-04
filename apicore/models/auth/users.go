@@ -10,16 +10,12 @@ type User struct {
     Id         bson.ObjectId `json:"id" bson:"_id,omitempty"`
     Username   string `bson:"username"`
     Password   string `bson:"password"`
-    FirstName  string `bson:"first_name"`
-    MidName    string `bson:"mid_name"`
-    LastName   time.Time `bson:"last_name"`
-    Gender     time.Time `bson:"gender"`
-    Position   *mgo.DBRef `bson:"position"`
-    Pos        Pos `bson:pos`
+    Position   *mgo.DBRef `json:"-"`
+    Pos        Pos `bson:"pos,omitempty"`
 
 }
 
-type Me struct {
+type Profile struct {
     Id         bson.ObjectId `json:"id" bson:"_id,omitempty"`
     Username   string `bson:"username"`
     FirstName  string `bson:"first_name"`
@@ -29,8 +25,8 @@ type Me struct {
     Created_at time.Time `bson:"created_at"`
     Updated_at time.Time `bson:"updated_at"`
     Phone      []Phone `bson:"phone"`
-    Position   *mgo.DBRef `bson:"position"`
-    Pos        Pos `bson:pos`
+    Position   *mgo.DBRef `json:"-"`
+    Pos        Pos `bson:"pos,omitempty"`
 }
 
 type Phone struct {
